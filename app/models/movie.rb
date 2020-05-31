@@ -1,0 +1,2 @@
+class Movie < Film
+end
