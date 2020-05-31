@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_075359) do
+ActiveRecord::Schema.define(version: 2020_05_31_130708) do
 
   create_table "films", force: :cascade do |t|
     t.string "type"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_05_31_075359) do
     t.integer "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_films_on_created_at"
     t.index ["parent_id"], name: "index_films_on_parent_id"
     t.index ["type"], name: "index_films_on_type"
   end
