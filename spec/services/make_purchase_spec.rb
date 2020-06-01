@@ -41,7 +41,7 @@ RSpec.describe MakePurchase do
       res = described_class.call user.id, content.id + 1
 
       expect(res).not_to be_success
-      expect(res.errors).not_to be_empty
+      expect(res.errors).to eq ['Content must exist']
     end
   end
 
@@ -50,7 +50,7 @@ RSpec.describe MakePurchase do
       res = described_class.call user.id + 1, content.id
 
       expect(res).not_to be_success
-      expect(res.errors).not_to be_empty
+      expect(res.errors).to eq ['User not found']
     end
   end
 end

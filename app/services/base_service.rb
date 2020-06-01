@@ -14,6 +14,7 @@ class BaseService
   private
 
   def error(message)
-    self.errors << I18n.t(message)
+    msg = message.is_a?(Symbol) ? I18n.t(message) : message
+    self.errors << msg
   end
 end

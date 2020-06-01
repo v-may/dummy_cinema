@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
     if res.success?
       head :ok
     else
-      render_error res.errors.join(' ')
+      render_error res.errors.join('; ')
     end
   end
 
