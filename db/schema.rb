@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_160312) do
+ActiveRecord::Schema.define(version: 2020_06_01_054145) do
 
   create_table "contents", force: :cascade do |t|
     t.integer "film_id", null: false
     t.integer "quality_id", null: false
-    t.decimal "price"
+    t.decimal "price", precision: 10, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["film_id"], name: "index_contents_on_film_id"
